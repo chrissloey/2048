@@ -20,6 +20,15 @@ body {
   margin-top: 10px;
 }
 
+.key {
+  width: 470px;
+  max-width: 470px;
+}
+
+.key td {
+  font-size: 36px;
+}
+
 input {
   display: inline-block;
   background: #8f7a66;
@@ -157,7 +166,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 30px; }
 
-.container {
+.container-wrap {
   width: 500px;
   margin: 0 auto; }
 
