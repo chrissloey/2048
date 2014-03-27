@@ -423,12 +423,12 @@ hr {
     background-repeat: no-repeat;}
   .tile.tile-32 .tile-inner {
     color: #f9f6f2;
-    background: url(../img/elder-lizard.png);
+    background: url(../img/bf-sword.png);
     background-size: 106.25px 106.25px;
     background-repeat: no-repeat; }
   .tile.tile-64 .tile-inner {
     color: #f9f6f2;
-    background: url(../img/bf-sword.png) ;
+    background: url(../img/elder-lizard.png) ;
         background-size: 106.25px 106.25px;
     background-repeat: no-repeat; }
   .tile.tile-128 .tile-inner {
