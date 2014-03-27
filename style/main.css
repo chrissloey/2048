@@ -20,11 +20,6 @@ body {
   margin-top: 10px;
 }
 
-.key {
-  width: 470px;
-  max-width: 470px;
-}
-
 .key td {
   font-size: 36px;
 }
