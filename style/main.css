@@ -600,7 +600,17 @@ hr {
   line-height: 42px;
   margin-bottom: 0; }
 
-.restart-button {
+.btn-group {
+  float: right;
+}
+
+.btn-group button, .btn-group button:hover,
+.btn-group button:active, .btn-group button:focus {
+  background: #8f7a66 !important;
+  color: #f9f6f2;
+}
+
+./*restart-button {
   display: inline-block;
   background: #8f7a66;
   border-radius: 3px;
@@ -612,7 +622,7 @@ hr {
   cursor: pointer;
   display: block;
   text-align: center;
-  float: right; }
+  float: right; }*/
 
 .game-explanation {
   margin-top: 50px; }
