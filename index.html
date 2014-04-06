@@ -33,9 +33,7 @@
     </div>
 
     <div class="above-game">
-      <p class="game-intro">Join the items and get to <strong><s>&nbsp2048&nbsp</s> Trinity Force!</strong></p>
-<!--       <a class="restart-button">New Game</a>
--->
+      <p class="game-intro">Join the items and get to <strong><s>&nbsp2048&nbsp</s> <span class='2048-name'>Trinity Force</span>!</strong></p>
     <div class="btn-group">
       <button type="button" class="btn restart-button">New Game</button>
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
@@ -43,14 +41,13 @@
         <span class="sr-only">Toggle Dropdown</span>
       </button>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="#">AD Game</a></li>
-        <li><a href="#">AP Game</a></li>
-        <li><a href="#">Pro Game</a></li>
+        <li><a href="#" class='ad-game'>AD Game</a></li>
+        <li><a href="#" class='ap-game'>AP Game</a></li>
       </ul>
     </div>
     </div>
 
-    <div class="game-container">
+    <div class="game-container ad">
       <div class="game-message">
         <div class="lower">
         <p></p>
@@ -192,6 +189,7 @@
   <script src="js/application.js"></script>
   <script src="js/jquery-1.11.0.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
 
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
