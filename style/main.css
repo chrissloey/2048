@@ -690,9 +690,16 @@ hr {
   float: right;
 }
 
-.btn-group button, .btn-group button:hover,
-.btn-group button:active, .btn-group button:focus {
+.btn-group button {
   background: #8f7a66 !important;
+  border-color: #76614D;
+  color: #f9f6f2;
+}
+
+.btn-group button:hover,
+.btn-group button:active, .btn-group button:focus {
+  background: #76614D !important;
+  border-color: #76614D;
   color: #f9f6f2;
 }
 
