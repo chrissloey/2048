@@ -156,8 +156,8 @@ HTMLActuator.prototype.scoreTweetButton = function () {
   tweet.classList.add("twitter-share-button");
   tweet.setAttribute("href", "https://twitter.com/share");
   tweet.setAttribute("data-via", "chrisasaur");
-  tweet.setAttribute("data-url", "http://chrissloey.github.io/LoL-2048/");
-  tweet.setAttribute("data-counturl", "http://chrissloey.github.io/LoL-2048/");
+  tweet.setAttribute("data-url", "http://lol2048.com/");
+  tweet.setAttribute("data-count", "none");
   tweet.textContent = "Tweet";
 
   var text = "I scored " + this.score + " points at LoL 2048! #2048game";
