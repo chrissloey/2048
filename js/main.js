@@ -5,6 +5,10 @@ $(document).ready(function() {
 		$('.game-container').removeClass('ap');
 		$('.game-container').removeClass('pro');
 		$('.game-container').addClass(type);
+
+		if (typeof ga !== "undefined") {
+			ga("send", "event", "game", type);
+		}
 	}
 	$('.ad-game').click(function() {
 		self.setGameType('ad');
