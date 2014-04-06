@@ -5,10 +5,23 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.actuator       = new Actuator;
 
   this.startTiles     = 2;
+  this.setMode("ad");
 
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
   this.inputManager.on("keepPlaying", this.keepPlaying.bind(this));
+
+  // Allow mode changes
+  var self = this;
+  $('.ad-game').click(function() {
+    self.setMode('ad');
+    $('.restart-button').click();
+  });
+
+  $('.ap-game').click(function() {
+    self.setMode('ap');
+    $('.restart-button').click();
+  });
 
   this.setup();
 }
@@ -35,6 +48,22 @@ GameManager.prototype.isGameTerminated = function () {
   }
 };
 
+// Modes
+GameManager.prototype.setMode = function(mode) {
+  $('.container').removeClass('ad');
+  $('.container').removeClass('ap');
+  $('.container').removeClass('pro');
+  $('.container').addClass(mode);
+
+  if (mode === 'ad') {
+    $('.2048-name').html("Trinity Force");
+  } else if (mode === 'ap') {
+    $('.2048-name').html("Rabadon's Deathcap");
+  }
+
+  this.mode = mode;
+}
+
 // Set up the game
 GameManager.prototype.setup = function () {
   var previousState = this.storageManager.getGameState();
@@ -47,6 +76,7 @@ GameManager.prototype.setup = function () {
     this.over        = previousState.over;
     this.won         = previousState.won;
     this.keepPlaying = previousState.keepPlaying;
+    this.setMode(previousState.mode);
   } else {
     this.grid        = new Grid(this.size);
     this.score       = 0;
@@ -109,7 +139,8 @@ GameManager.prototype.serialize = function () {
     score:       this.score,
     over:        this.over,
     won:         this.won,
-    keepPlaying: this.keepPlaying
+    keepPlaying: this.keepPlaying,
+    mode:        this.mode
   };
 };
 
