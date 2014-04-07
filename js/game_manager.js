@@ -84,6 +84,10 @@ GameManager.prototype.setup = function () {
     this.won         = false;
     this.keepPlaying = false;
 
+    if (!this.mode) {
+      this.setMode('ad');
+    }
+
     // Add the initial tiles
     this.addStartTiles();
   }
