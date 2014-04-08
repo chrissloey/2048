@@ -703,6 +703,11 @@ hr {
   color: #f9f6f2;
 }
 
+.dropdown-menu {
+  width: 123px;
+  min-width: 0px !important;
+}
+
 .game-explanation {
   margin-top: 50px; }
 
