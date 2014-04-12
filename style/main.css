@@ -762,8 +762,13 @@ hr {
     margin-top: 15px; }
 
   .banner {
-    width: 320px;
-    margin-left: -20px;
+    height: 40px;
+  }
+
+  .navbar {
+    position:absolute !important;
+    left:0;
+    right:0;
   }
 
   .nav-inner p {
