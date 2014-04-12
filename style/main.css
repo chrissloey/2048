@@ -7,10 +7,41 @@ html, body {
   background: #faf8ef;
   color: #776e65;
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
-  font-size: 18px; }
+  font-size: 18px;
+}
 
 body {
   margin: 80px 0; }
+
+.banner {
+  height: 40px;
+}
+
+.navbar {
+  display: none;
+  min-height:0px !important;
+  background: #F1C40F !important;
+  color: #FFF;
+  padding-bottom: 5px;
+}
+
+.navbar p {
+  font-size: 14px !important;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.navbar .subscribe {
+  padding-left: 10px;
+  display: inline-block;
+}
+
+.nav-inner {
+  padding: 5px 0;
+  width: 500px;
+  margin: 0 auto;
+  height: 30px;
+}
 
 .newsletter {
   font-size: 24px;
@@ -177,7 +208,7 @@ hr {
 
 .container {
   width: 500px;
-  margin: 0 auto; }
+  margin: auto; }
 
 @-webkit-keyframes fade-in {
   0% {
@@ -730,9 +761,14 @@ hr {
     font-size: 24px;
     margin-top: 15px; }
 
+  .nav-inner {
+    width: 280px;
+    margin: auto;
+  }
+
   .container {
     width: 280px;
-    margin: 0 auto; }
+    margin: auto; }
 
   .score-container, .best-container {
     margin-top: 0;
