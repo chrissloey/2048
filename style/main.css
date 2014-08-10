@@ -13,34 +13,69 @@ html, body {
 body {
   margin: 80px 0; }
 
-.banner {
-  height: 40px;
+.subscribe {
+  margin-top: 15px;
+  background-color: rgba(238, 228, 218, 0.35);
+  border-radius: 4px;
+  padding: 15px;
 }
 
-.navbar {
-  display: none;
-  min-height:0px !important;
-  background: #F1C40F !important;
-  color: #FFF;
-  padding-bottom: 5px;
+.subscribe h2 {
+  font-size: 1.6em;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.navbar p {
-  font-size: 14px !important;
+.subscribe p {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.subscribe input, .subscribe button {
+  border-radius: 4px;
+  height: 60px;
   display: inline-block;
-  vertical-align: middle;
 }
 
-.navbar .subscribe {
-  padding-left: 10px;
-  display: inline-block;
+.subscribe input {
+  width: 65%;
+  box-shadow: 3px 3px #bbada0;
+  border: 1px solid #bbada0;
+  outline: 0;
+  font-size: 1.8em;
+  padding: 12px 5%;
+  background: #fdfdfd !important;
 }
 
-.nav-inner {
-  padding: 5px 0;
-  width: 500px;
-  margin: 0 auto;
-  height: 30px;
+.subscribe button {
+  width: 30%;
+  float: right;
+  border: 0;
+  background-color: #24e571;
+  box-shadow: 3px 3px #15b254;
+  outline: 0;
+  font-size: 1.2em;
+  padding: 12px 5%;
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .subscribe input, .subscribe button {
+    margin-bottom: 10px;
+    height: 40px;
+    font-size: 1.2em;
+  }
+
+  .subscribe input {
+    width: 100%;
+  }
+
+  .subscribe button {
+    width: 100%;
+    float: none;
+  }
 }
 
 .newsletter {
