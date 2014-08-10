@@ -15,7 +15,7 @@ body {
 
 .subscribe {
   margin-top: 15px;
-  background-color: rgba(238, 228, 218, 0.35);
+  background-color: rgba(238, 228, 218, 0.75);
   border-radius: 4px;
   padding: 15px;
   position: relative;
@@ -34,7 +34,7 @@ body {
   text-align: center;
 }
 
-.subscribe .close {
+.subscribe .toggle {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -44,6 +44,28 @@ body {
   background-repeat: no-repeat;
   background-size: 16px 20px;
   cursor: pointer;
+}
+
+.subscribe .toggle.open {
+  -webkit-animation:spin 0.4s ;
+  -moz-animation:spin 0.4s ;
+  animation:spin 0.4s ;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(45deg); }
+}
+
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(45deg); }
+}
+
+@keyframes spin {
+  from { -webkit-transform: rotate(0deg); transform:rotate(0deg); }
+  to { -webkit-transform: rotate(45deg); transform:rotate(45deg); }
 }
 
 .subscribe input, .subscribe button {

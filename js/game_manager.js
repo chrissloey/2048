@@ -6,6 +6,7 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 
   this.startTiles     = 2;
   this.setMode("ad");
+  this.subscribeCollapsed = false;
 
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
@@ -21,6 +22,23 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   $('.ap-game').click(function() {
     self.setMode('ap');
     $('.restart-button').click();
+  });
+
+  // Subscribe
+  $('.subscribe .toggle').click(function() {
+    var toggle = $('.subscribe .toggle');
+    if (toggle.hasClass('close')) {
+      $('.subscribe .details').slideUp(400);
+      toggle.removeClass('close');
+      toggle.addClass('open');
+      self.subscribeCollapsed = true;
+    } else {
+      $('.subscribe .details').slideDown(400);
+      toggle.addClass('close');
+      toggle.removeClass('open');
+      self.subscribeCollapsed = false;
+    }
+    self.storageManager.setGameState(self.serialize());
   });
 
   this.setup();
@@ -62,7 +80,7 @@ GameManager.prototype.setMode = function(mode) {
   }
 
   this.mode = mode;
-}
+};
 
 // Set up the game
 GameManager.prototype.setup = function () {
@@ -77,12 +95,23 @@ GameManager.prototype.setup = function () {
     this.won         = previousState.won;
     this.keepPlaying = previousState.keepPlaying;
     this.setMode(previousState.mode);
+    this.subscribeCollapsed = previousState.subscribeCollapsed;
+
+    if (this.subscribeCollapsed) {
+      var toggle = $('.subscribe .toggle');
+      toggle.removeClass('close');
+      toggle.addClass('open');
+      $('.subscribe .details').hide();
+    } else {
+      this.subscribeCollapsed = false;
+    }
   } else {
     this.grid        = new Grid(this.size);
     this.score       = 0;
     this.over        = false;
     this.won         = false;
     this.keepPlaying = false;
+    this.subscribeCollapsed = false;
 
     if (!this.mode) {
       this.setMode('ad');
@@ -144,7 +173,8 @@ GameManager.prototype.serialize = function () {
     over:        this.over,
     won:         this.won,
     keepPlaying: this.keepPlaying,
-    mode:        this.mode
+    mode:        this.mode,
+    subscribeCollapsed: this.subscribeCollapsed
   };
 };
 
