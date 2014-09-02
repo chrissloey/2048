@@ -21,6 +21,10 @@ body {
   position: relative;
 }
 
+.subscribe .instructions {
+  font-size: 1em;
+}
+
 .subscribe h2 {
   font-size: 1.6em;
   font-weight: normal;
