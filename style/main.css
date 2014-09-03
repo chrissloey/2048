@@ -21,6 +21,18 @@ body {
   position: relative;
 }
 
+.subscribe p {
+  padding-bottom: 5px;
+}
+
+.subscribe a {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #76614D;
+  border-radius: 4px;
+  color: white;
+}
+
 .subscribe .instructions {
   font-size: 1em;
 }
