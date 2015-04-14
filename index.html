@@ -50,8 +50,11 @@
       <span class='toggle close'></span>
       <div class='details'>
         <p>I created an easy way to keep up with League of Legends.</p>
-        <form action="http://lolnewsletter.us3.list-manage.com/subscribe/post?u=6fdb1513fca31b3b5bdf1cd50&amp;id=6529b706ca" method="post">
-          <input id="email" name="EMAIL" type="email" value="" type="text" placeholder="Enter your email"></input>
+        <form method="POST" action="http://api.lolnewsletter.com/api/v1/lists/subscribe">
+          <input type="email" placeholder="Enter your email" name="email">
+          <input type="hidden" name="list_id" value="1">
+          <input type="hidden" name="source" value="lol2048">
+          <input type="hidden" name="redirect" value="true">
           <button type="submit">Subscribe</button>
         </form>
       </div>
