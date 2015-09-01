@@ -21,6 +21,16 @@ body {
   position: relative;
 }
 
+.subscribe .details {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.subscribe .details .twitter-follow-button {
+  display: block;
+  margin: 0 auto;
+}
+
 .subscribe .instructions {
   font-size: 1em;
 }
