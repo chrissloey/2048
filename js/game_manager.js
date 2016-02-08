@@ -6,7 +6,7 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 
   this.startTiles     = 2;
   this.setMode("ad");
-  this.followCollapsed = false;
+  this.appAreaCollapsed = false;
 
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
@@ -25,18 +25,18 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   });
 
   // Subscribe
-  $('.subscribe .toggle').click(function() {
-    var toggle = $('.subscribe .toggle');
+  $('.subscribe.header .toggle').click(function() {
+    var toggle = $('.subscribe.header .toggle');
     if (toggle.hasClass('close')) {
-      $('.subscribe .details').slideUp(400);
+      $('.subscribe.header .details').slideUp(400);
       toggle.removeClass('close');
       toggle.addClass('open');
-      self.followCollapsed = true;
+      self.appAreaCollapsed = true;
     } else {
-      $('.subscribe .details').slideDown(400);
+      $('.subscribe.header .details').slideDown(400);
       toggle.addClass('close');
       toggle.removeClass('open');
-      self.followCollapsed = false;
+      self.appAreaCollapsed = false;
     }
     self.storageManager.setGameState(self.serialize());
   });
@@ -95,15 +95,15 @@ GameManager.prototype.setup = function () {
     this.won         = previousState.won;
     this.keepPlaying = previousState.keepPlaying;
     this.setMode(previousState.mode);
-    this.followCollapsed = previousState.followCollapsed;
+    this.appAreaCollapsed = previousState.appAreaCollapsed;
 
-    if (this.followCollapsed) {
-      var toggle = $('.subscribe .toggle');
+    if (this.appAreaCollapsed) {
+      var toggle = $('.subscribe.header .toggle');
       toggle.removeClass('close');
       toggle.addClass('open');
-      $('.subscribe .details').hide();
+      $('.subscribe.header .details').hide();
     } else {
-      this.followCollapsed = false;
+      this.appAreaCollapsed = false;
     }
   } else {
     this.grid        = new Grid(this.size);
@@ -111,7 +111,7 @@ GameManager.prototype.setup = function () {
     this.over        = false;
     this.won         = false;
     this.keepPlaying = false;
-    this.followCollapsed = false;
+    this.appAreaCollapsed = false;
 
     if (!this.mode) {
       this.setMode('ad');
@@ -174,7 +174,7 @@ GameManager.prototype.serialize = function () {
     won:         this.won,
     keepPlaying: this.keepPlaying,
     mode:        this.mode,
-    followCollapsed: this.followCollapsed
+    appAreaCollapsed: this.appAreaCollapsed
   };
 };
 

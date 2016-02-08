@@ -15,10 +15,27 @@ body {
 
 .subscribe {
   margin-top: 15px;
-  background-color: rgba(238, 228, 218, 0.75);
+  color: #34495E;
   border-radius: 4px;
   padding: 15px;
   position: relative;
+
+  background: rgba(242,213,90,1);
+  background: -moz-linear-gradient(top, rgba(242,213,90,1) 0%, rgba(241,206,21,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242,213,90,1)), color-stop(100%, rgba(241,206,21,1)));
+  background: -webkit-linear-gradient(top, rgba(242,213,90,1) 0%, rgba(241,206,21,1) 100%);
+  background: -o-linear-gradient(top, rgba(242,213,90,1) 0%, rgba(241,206,21,1) 100%);
+  background: -ms-linear-gradient(top, rgba(242,213,90,1) 0%, rgba(241,206,21,1) 100%);
+  background: linear-gradient(to bottom, rgba(242,213,90,1) 0%, rgba(241,206,21,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2d55a', endColorstr='#f1ce15', GradientType=0 );
+}
+
+.subscribe.footer {
+  margin-bottom: 100px;
+}
+
+.subscribe a {
+  color: #34495E;
 }
 
 .subscribe .details {
@@ -26,18 +43,92 @@ body {
   width: 100%;
 }
 
-.subscribe .details .btn {
+.app-actions {
+  margin: 0 auto;
+  display: table;
+}
+
+.app-actions img {
+  display: inline-block;
+}
+
+.app-actions .get-app {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.get-app .no {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+  display: block;
+  font-size: 1em;
+  font-weight: normal;
+  color: #3498DB;
+}
+
+.subscribe a.android {
+  color: #3498DB;
+  font-weight: normal;
+}
+
+.get-app .btn {
+  font-size: 1.2em;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 20px;
   display: block;
   text-align: center;
-  margin: 0 auto;
-  max-width: 300px;
   color: white;
-  background: #8f7a66;
-  border-color: #76614D;
+  background: #3498DB;
+  border-color: #3498DB;
+}
+
+.get-app .btn:hover, .get-app .btn:active {
+  color: #fafafa;
+  background: #2980B9;
+  border-color: #2980B9;
+}
+
+.subscribe .app-store-help {
+  margin-top: 10px;
+}
+
+.subscribe .search-term {
+  font-weight: bold;
+}
+
+.app-icon {
+  height: 150px;
+  width: 150px;
 }
 
 .subscribe .instructions {
   font-size: 1em;
+}
+
+.modal-wrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 999;
+}
+
+.subscribe.modal {
+  position: fixed;
+  top: 40px;
+  width: inherit;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.subscribe.modal .details {
+  display: block !important;
 }
 
 .subscribe h2 {
@@ -53,7 +144,7 @@ body {
   text-align: center;
 }
 
-.subscribe .toggle {
+.subscribe .toggle.x {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -63,13 +154,15 @@ body {
   background-repeat: no-repeat;
   background-size: 16px 20px;
   cursor: pointer;
+  visibility: hidden;
 }
 
-.subscribe .toggle.open {
+.subscribe .toggle.x.open {
   -webkit-animation:spin 0.4s ;
   -moz-animation:spin 0.4s ;
   animation:spin 0.4s ;
   -webkit-animation-fill-mode: forwards;
+  visibility: visible;
 }
 
 @-moz-keyframes spin {
@@ -130,13 +223,27 @@ body {
     width: 100%;
     float: none;
   }
+
+  .subscribe .app-actions .app-icon {
+    display: block;
+  }
+
+  .subscribe .app-actions .get-app {
+    display: block;
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+  .subscribe.modal {
+    width: 85%;
+  }
 }
 
 .newsletter {
   font-size: 24px;
   padding: 20px 10px;
-  color: #171A1D;
-  background: rgba(255,255,255,0.7);
+  color: white;
+  background: rgba(0,0,0,0.8);
   margin-top: 10px;
 }
 
@@ -391,15 +498,14 @@ hr {
       margin-right: 5px; }
   .game-message a {
     display: inline-block;
-    background: #8f7a66;
+    background: #3498DB;
     border-radius: 3px;
     padding: 0 20px;
     text-decoration: none;
     color: #f9f6f2;
     height: 40px;
-    line-height: 42px;
-    cursor: pointer;
-    margin-left: 9px; }
+    line-height: 40px;
+    cursor: pointer; }
     .game-message a.keep-playing-button {
       display: none; }
   .game-message .score-sharing {
